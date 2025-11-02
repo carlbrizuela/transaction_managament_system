@@ -11,8 +11,24 @@ A simple transaction management system consisting of an API for data operations 
 - Ruby `3.3.5`
 - Rails `7.2.3`
 ## Installation
+1. Clone the repository:
 
-1. 
+    ```
+    git clone https://github.com/carlbrizuela/transaction_managament_system.git
+    cd Transaction_Management_System
+    ```
+2. Backend (Rails) setup:
+
+   ```
+   cd backend
+   bundle install
+   ```
+3. Frontend (React) setup
+
+   ```
+   cd ../frontend
+   npm install
+   ```
 
 ## Configuration
 
@@ -22,25 +38,32 @@ A simple transaction management system consisting of an API for data operations 
   |-|-|-|-|-|
   |`FILE_PATH`| Absolute path of transactions csv file|Yes|-|- Windows: `C:\Users\Username\Documents\transactions.csv`<br /> - Unix/Linux: `/home/username/documents/transactions.csv`
 
+  - Create a `.env` file in `Transaction_Management_System/backend` directory:
+
+    ```
+    FILE_PATH = "/your/csv/file/absolute/path"
+    ```
+
 ## Running the Application
-- In `Transaction_Management_System` directory,
-  - To start backend:
+
+- Start the development servers (separate terminal):
+  - Backend (Rails)
     
-    ```
-    cd backend/
-    rails s
-    ```
-  - To start frontend:
+      ```
+      cd backend
+      rails server #starts backend at http://localhost:3000
+      ```
+  - Frontend (React)
     
-    ```
-    cd frontend/
-    npm start
-    ```
+      ```
+      cd frontend
+      npm start #starts backend at http://localhost:3001
+      ``` 
 
 ## API Documentation
 1. GET `/api/v1/transactions`
     - Retrieves all transactions from csv file
-    - Response body
+    - Response body:
       
         ```
         [
@@ -69,7 +92,7 @@ A simple transaction management system consisting of an API for data operations 
         ```
 2. POST `api/v1/transactions`
     - Adds new transaction to csv file
-    - Request body
+    - Request body:
       
       ```
       {
@@ -79,7 +102,7 @@ A simple transaction management system consisting of an API for data operations 
         amount: "310.75"
       }
       ```
-    - Response body
+    - Response body:
       
       ```
       {
