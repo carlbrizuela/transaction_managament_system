@@ -30,7 +30,7 @@ test("renders transactions table when fetch succeeds", async () => {
   const cell = await screen.findByText("John Doe")
   expect(cell).toBeInTheDocument()
 
-  // Checks headers
+  // Checks if headers are present
   expect(screen.getByText("Account Holder Name")).toBeInTheDocument()
   expect(screen.getByText("Amount")).toBeInTheDocument()
   expect(screen.getByText("Status")).toBeInTheDocument()
