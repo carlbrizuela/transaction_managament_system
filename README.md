@@ -84,7 +84,7 @@
         "transaction_date": "2025-03-04",
         "account_number": "8899-0011-2233",
         "account_holder_name": "Sarah Williams",
-        "amount": "310.75"
+        "amount": "310.75",
         "status": "Settled"
       }
       ```
