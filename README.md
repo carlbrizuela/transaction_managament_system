@@ -20,20 +20,20 @@
   |`FILE_PATH`| Absolute path of transactions csv file|Yes|-|- Windows: `C:\Users\Username\Documents\transactions.csv`<br /> - Unix/Linux: `/home/username/documents/transactions.csv`
 
 ## Running the Application
-
-- To start backend:
-  ```
-  cd backend/
-  rails s
-  ```
-- To start frontend:
-  ```
-  cd frontend/
-  npm start
-  ```
+- In Transaction_Management_System directory,
+  - To start backend:
+    ```
+    cd backend/
+    rails s
+    ```
+  - To start frontend:
+    ```
+    cd frontend/
+    npm start
+    ```
 
 ## API Documentation
-1. GET /api/v1/transactions
+1. GET `/api/v1/transactions`
     - Retrieves all transactions from csv file
     - Response body
         ```
@@ -61,7 +61,7 @@
           }
         ]
         ```
-2. POST api/v1/transactions
+2. POST `api/v1/transactions`
     - Adds new transaction to csv file
     - Request body
       ```
@@ -87,6 +87,7 @@
 ## Testing
 
 - Backend testing
-  ```
-   bundle exec rspec spec/requests/transactions_spec.rb
-  ```
+  - In `Transaction_Management_System/backend`, run     
+    ```
+     bundle exec rspec spec/requests/transactions_spec.rb
+    ```
