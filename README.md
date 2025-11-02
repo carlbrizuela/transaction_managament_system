@@ -81,7 +81,12 @@
         "amount": "310.75"
         "status": "Settled"
       }
-    ```
+      ```
+      > [!NOTE]
+      > Status is randomly assigned in backend
 ## Testing
 
-- How to test the application functionality
+- Backend testing
+  ```
+   bundle exec rspec spec/requests/transactions_spec.rb
+  ```
