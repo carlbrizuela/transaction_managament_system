@@ -7,7 +7,7 @@ A simple transaction management system consisting of an API for data operations 
 - Transactions table
 <img width="1920" height="932" alt="image" src="https://github.com/user-attachments/assets/89b6dc98-c5d7-4cf9-987d-ba94bbe79fa3" />
 
-- Add transaaction modal
+- Add transaction modal
 <img width="1920" height="928" alt="image" src="https://github.com/user-attachments/assets/81f31a5d-a02c-484b-9b24-32e17da499c4" />
 
 
