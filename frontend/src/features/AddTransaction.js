@@ -1,17 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router';
+import ErrorMessages from "../components/ErrorMessages";
 
 function AddTransaction(props){
 
-  const {setShowModal} = props
+  const {setShowModal, setReload, setMessage, setIsVisible} = props
 
   const [transactionDate, setTransactionDate] = useState("")
   const [accountNumber, setAccountNumber] = useState("")
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
   const [amount, setAmount] = useState("")
-
-  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -33,7 +32,10 @@ function AddTransaction(props){
     })
 
     if(response.ok){
-      navigate("/")
+      const json = await response.json()
+      setMessage(json.message)
+      setShowModal(false)
+      setIsVisible(true)
     }
     
     }catch(error){
@@ -131,7 +133,9 @@ function AddTransaction(props){
             <div className="sm:col-span-2">
               <button 
                 type="submit"
-                className="w-full px-5 py-2.5 sm:mt-2 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                className="w-full px-5 py-2.5 sm:mt-2 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800"
+                onClick={() => setReload(prev => !prev)}
+              >
                   Add
               </button>
             </div>

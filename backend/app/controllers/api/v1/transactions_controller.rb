@@ -4,11 +4,11 @@ class Api::V1::TransactionsController < ApplicationController
   def index
     file_path = csv_file_path
     unless File.exist?(file_path)
-      return render json: { message: "File not found" }, status: :not_found
+      return render json: { message: "File not found. Please check file path." }, status: :not_found
     end
 
     if File.zero?(csv_file_path)
-      return render json: { message: "No transactions found" }, status: :not_found
+      return render json: { message: "No transactions found. File provided is empty" }, status: :not_found
     end
     
     csv_data = CSV.read(file_path, headers: true)
@@ -32,7 +32,7 @@ class Api::V1::TransactionsController < ApplicationController
       csv << new_row_data
     end
 
-    render json: transaction.merge(status: status), status: :created
+    render json:{data: transaction.merge(status: status), message: "New transaction added"}, status: :created
   end
 
   private

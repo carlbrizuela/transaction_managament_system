@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react"
+import { use, useEffect, useState } from "react"
 import AddTransaction from "./AddTransaction"
+import ErrorMessages from "../components/ErrorMessages"
 
 function TransactionsList(){
 
@@ -7,11 +8,20 @@ function TransactionsList(){
   const [transactionHeaders, setTransactionHeaders] = useState([])
   const [showModal, setShowModal] = useState(false)
   const [errors, setErrors] = useState()
-
- 
-  useEffect(()=> {
+  const [reload, setReload] = useState(false)
+  const [message, setMessage] = useState()
+  const [isVisible, setIsVisible] = useState(false)
+  
+  useEffect(() => {
     getTransactions()
-  }, [])
+  }, [reload])
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setIsVisible(false)
+    }, 2000);
+    return () => clearTimeout(timerId);
+  }, [message])
 
   const getTransactions = async () => {
     try {
@@ -36,15 +46,18 @@ function TransactionsList(){
     }
   }
 
-  if (!transactions) return(<h1>{errors}</h1>)
+  if (!transactions) return(<ErrorMessages errors={errors}/>)
 
   return(
     <div className="flex flex-col h-full justify-center items-center px-5">
-      <h1 className="text-2xl font-bold text-gray-800 mb-4">Transaction Management System</h1>
+      <div className={`fixed top-4 left-1/2 -translate-x-1/2 bg-green-200 px-4 py-2 rounded-lg text-green-800 transition-opacity duration-500 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'} shadow-lg`}>
+        {message}
+      </div>
+      <h1 className="text-2xl font-bold text-gray-800 mb-4 mt-2">Transaction Management System</h1>
       <div className="flex justify-end w-full pb-2">
         <button 
           onClick={() => setShowModal(true)}
-          className="text-xs bg-gray-400 hover:bg-gray-300 font-semibold px-4 py-2 rounded-md shadow">
+          className="text-xs bg-gray-400 hover:bg-gray-500 font-semibold px-4 py-2 rounded-md shadow">
             Add Transaction
         </button>
       </div>
@@ -61,7 +74,7 @@ function TransactionsList(){
           </thead>
           <tbody>
             { transactions.map((transaction, index) => (
-              <tr key={index} className="odd:bg-white even:bg-gray-100 border-b border-gray-200">
+              <tr key={index} className="odd:bg-white even:bg-gray-100 border-b border-gray-200 hover:bg-gray-200 hover:cursor-pointer">
                 {transactionHeaders.map((header,index) => {
                   if (header == "Status") {
                     const statusClasses = {
@@ -90,7 +103,8 @@ function TransactionsList(){
         </table>
       </div>
       
-      { showModal && transactions && <AddTransaction setShowModal={setShowModal}/>}
+      { showModal && transactions && 
+        <AddTransaction setShowModal={setShowModal} setReload={setReload} setMessage={setMessage} setIsVisible={setIsVisible}/>}
     </div>
   )
 }
