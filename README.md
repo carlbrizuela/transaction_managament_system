@@ -21,7 +21,16 @@
 
 ## Running the Application
 
-- Commands to start both backend and frontend
+- To start backend:
+  ```
+  cd backend/
+  rails s
+  ```
+- To start frontend:
+  ```
+  cd frontend/
+  npm start
+  ```
 
 ## API Documentation
 1. GET /api/v1/transactions
@@ -72,9 +81,7 @@
         "amount": "310.75"
         "status": "Settled"
       }
-  ```
-           
-
+    ```
 ## Testing
 
 - How to test the application functionality
