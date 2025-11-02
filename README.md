@@ -15,6 +15,7 @@
 ## Configuration
 
 - Environment Variables
+  
   |Variable|Description|Required|Default|Example
   |-|-|-|-|-|
   |`FILE_PATH`| Absolute path of transactions csv file|Yes|-|- Windows: `C:\Users\Username\Documents\transactions.csv`<br /> - Unix/Linux: `/home/username/documents/transactions.csv`
@@ -22,11 +23,13 @@
 ## Running the Application
 - In `Transaction_Management_System` directory,
   - To start backend:
+    
     ```
     cd backend/
     rails s
     ```
   - To start frontend:
+    
     ```
     cd frontend/
     npm start
@@ -36,6 +39,7 @@
 1. GET `/api/v1/transactions`
     - Retrieves all transactions from csv file
     - Response body
+      
         ```
         [
           {
@@ -64,6 +68,7 @@
 2. POST `api/v1/transactions`
     - Adds new transaction to csv file
     - Request body
+      
       ```
       {
         transaction_date: "2025-03-04",
@@ -73,6 +78,7 @@
       }
       ```
     - Response body
+      
       ```
       {
         "transaction_date": "2025-03-04",
@@ -88,6 +94,7 @@
 
 - Backend testing
   - In `Transaction_Management_System/backend` directory, run
+    
     ```
     bundle exec rspec spec/requests/transactions_spec.rb
     ```
