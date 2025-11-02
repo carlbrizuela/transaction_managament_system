@@ -20,7 +20,7 @@
   |`FILE_PATH`| Absolute path of transactions csv file|Yes|-|- Windows: `C:\Users\Username\Documents\transactions.csv`<br /> - Unix/Linux: `/home/username/documents/transactions.csv`
 
 ## Running the Application
-- In Transaction_Management_System directory,
+- In `Transaction_Management_System` directory,
   - To start backend:
     ```
     cd backend/
@@ -87,7 +87,7 @@
 ## Testing
 
 - Backend testing
-  - In `Transaction_Management_System/backend`, run     
+  - In `Transaction_Management_System/backend` directory, run
     ```
-     bundle exec rspec spec/requests/transactions_spec.rb
+    bundle exec rspec spec/requests/transactions_spec.rb
     ```
