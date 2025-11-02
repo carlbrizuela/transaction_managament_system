@@ -98,3 +98,8 @@
     ```
     bundle exec rspec spec/requests/transactions_spec.rb
     ```
+- Frontend testing
+  - In `Transaction_Management_System/frontend` directory, run
+    ```
+    npm test
+    ```
