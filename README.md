@@ -24,8 +24,56 @@
 - Commands to start both backend and frontend
 
 ## API Documentation
-
-- Endpoint details with request/response examples
+1. GET /api/v1/transactions
+    - Retrieves all transactions from csv file
+    - Response body
+        ```
+        [
+          {
+            "Transaction Date": "2025-03-01",
+            "Account Number": "7289-3445-1121",
+            "Account Holder Name": "Maria Johnson",
+            "Amount": "150.00",
+            "Status": "Settled"
+          },
+          {
+            "Transaction Date": "2025-03-02",
+            "Account Number": "1122-3456-7890",
+            "Account Holder Name": "John Smith",
+            "Amount": "75.50",
+            "Status": "Pending"
+          },
+          {
+            "Transaction Date": "2025-03-03",
+            "Account Number": "3344-5566-7788",
+            "Account Holder Name": "Robert Chen",
+            "Amount": "220.25",
+            "Status": "Settled"
+          }
+        ]
+        ```
+2. POST api/v1/transactions
+    - Adds new transaction to csv file
+    - Request body
+      ```
+      {
+        transaction_date: "2025-03-04",
+        account_number: "8899-0011-2233",
+        account_holder_name: "Sarah Williams",
+        amount: "310.75"
+      }
+      ```
+    - Response body
+      ```
+      {
+        "transaction_date": "2025-03-04",
+        "account_number": "8899-0011-2233",
+        "account_holder_name": "Sarah Williams",
+        "amount": "310.75"
+        "status": "Settled"
+      }
+  ```
+           
 
 ## Testing
 
