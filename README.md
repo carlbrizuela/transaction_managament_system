@@ -14,7 +14,10 @@
 
 ## Configuration
 
-- Any environment variables or config files needed
+- Environment Variables
+  |Variable|Description|Required|Default|Example
+  |-|-|-|-|-|
+  |`FILE_PATH`| Absolute path of transactions csv file|Yes|-|- Windows: `C:\Users\Username\Documents\transactions.csv`<br /> - Unix/Linux: `/home/username/documents/transactions.csv`
 
 ## Running the Application
 
