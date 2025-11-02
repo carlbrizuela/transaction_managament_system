@@ -15,7 +15,7 @@ A simple transaction management system consisting of an API for data operations 
 
     ```
     git clone https://github.com/carlbrizuela/transaction_managament_system.git
-    cd Transaction_Management_System
+    cd transaction_management_system
     ```
 2. Backend (Rails) setup:
 
@@ -38,7 +38,7 @@ A simple transaction management system consisting of an API for data operations 
   |-|-|-|-|-|
   |`FILE_PATH`| Absolute path of transactions csv file|Yes|-|- Windows: `C:\Users\Username\Documents\transactions.csv`<br /> - Unix/Linux: `/home/username/documents/transactions.csv`
 
-  - Create a `.env` file in `Transaction_Management_System/backend` directory:
+  - Create a `.env` file in `transaction_management_system/backend` directory:
 
     ```
     FILE_PATH = "/your/csv/file/absolute/path"
@@ -118,13 +118,13 @@ A simple transaction management system consisting of an API for data operations 
 ## Testing
 
 - Backend testing
-  - In `Transaction_Management_System/backend` directory, run
+  - In `transaction_management_system/backend` directory, run
     
     ```
     bundle exec rspec spec/requests/transactions_spec.rb
     ```
 - Frontend testing
-  - In `Transaction_Management_System/frontend` directory, run
+  - In `transaction_management_system/frontend` directory, run
     
     ```
     npm test
