@@ -2,6 +2,8 @@
 
 ## Overview
 
+A simple transaction management system consisting of an API for data operations using Ruby on Rails and a React frontend for displaying and adding transactions. The system stores transaction data in a CSV file.
+
 ## Prerequisites
 - React `19.2.0`
 - Node.js `24.1.0`
@@ -10,7 +12,7 @@
 - Rails `7.2.3`
 ## Installation
 
-- Step-by-step setup instructions
+1. 
 
 ## Configuration
 
