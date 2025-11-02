@@ -88,7 +88,7 @@
         "status": "Settled"
       }
       ```
-      > [!NOTE]
+      > [NOTE]
       > Status is randomly assigned in backend
 ## Testing
 
@@ -100,6 +100,7 @@
     ```
 - Frontend testing
   - In `Transaction_Management_System/frontend` directory, run
+    
     ```
     npm test
     ```
